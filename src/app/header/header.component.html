@@ -1,0 +1,19 @@
+<header>
+    <mat-toolbar [class.sticky]="isHeaderSticky">
+        <div class="nav-links">
+            <a mat-button routerLink="/home">Home</a>
+            <a mat-button routerLink="/campaigns">Campaigns</a>
+            <a mat-button routerLink="/create-campaign">Create Campaign</a>
+        </div>
+        <div class="logo-container">
+            <a routerLink="/">
+                <img src="./../../assets/img/crowdfunding.png" alt="Logo">
+            </a>
+        </div>
+        <div class="auth-links">
+            <a mat-button routerLink="/profile">Profile</a>
+            <a mat-button routerLink="/login">Login</a>
+            <a mat-button routerLink="/register">Register</a>
+        </div>
+    </mat-toolbar>
+</header>

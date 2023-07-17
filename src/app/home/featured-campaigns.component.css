@@ -1,0 +1,19 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+ngb-carousel {
+    width: 90%;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+ng-template img {
+    width: 100%;
+}
+ngb-carousel img {
+    width: 100%;
+}
