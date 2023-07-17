@@ -6,6 +6,7 @@ import { FeaturedCampaignsComponent } from './featured-campaigns.component';
 import { CarouselModule } from '@coreui/angular'
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthModule } from '../auth/auth.module';
 
 
 
@@ -19,7 +20,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     CarouselModule,
     NgbCarouselModule,
-    BrowserModule
+    BrowserModule,
+    AuthModule
   ],
   exports: [
     BannerComponent,

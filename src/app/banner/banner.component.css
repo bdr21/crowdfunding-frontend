@@ -1,4 +1,7 @@
 .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(./../../assets/img/home_banner.jpg);
     background-position: 50% 50%;
     border-radius: 0;

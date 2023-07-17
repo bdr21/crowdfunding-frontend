@@ -1,2 +1,11 @@
 <app-banner></app-banner>
 <app-home-featured-campaigns></app-home-featured-campaigns>
+<button class="btn btn-lg btn-outline-primary mb-2 me-2" (click)="openEnd(content)">Right position</button>
+<ng-template class="offcanvas-container" #content let-offcanvas>
+	
+    <app-login></app-login>
+
+    <button type="button" class="btn btn-outline-dark" (click)="offcanvas.close('Close click')">Close</button>
+
+</ng-template>
+<div class="offcanvas-cont"></div>
