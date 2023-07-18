@@ -1,19 +1,17 @@
 <header>
     <mat-toolbar [class.sticky]="isHeaderSticky">
         <div class="nav-links">
-            <a mat-button routerLink="/home">Home</a>
-            <a mat-button routerLink="/campaigns">Campaigns</a>
-            <a mat-button routerLink="/create-campaign">Create Campaign</a>
+            <p-button routerLink="/home" label="Home" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button routerLink="/campaigns" label="Campaigns" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button routerLink="/create-campaign" label="Create Campaign" styleClass="p-button-text p-button-secondary"></p-button>
         </div>
         <div class="logo-container">
-            <a routerLink="/">
-                <img src="./../../assets/img/crowdfunding.png" alt="Logo">
-            </a>
+            <a routerLink="/"></a>
         </div>
         <div class="auth-links">
-            <a mat-button routerLink="/profile">Profile</a>
-            <a mat-button routerLink="/login">Login</a>
-            <a mat-button routerLink="/register">Register</a>
+            <p-button routerLink="/profile" label="Profile" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button (click)="onLoginButtonClick()" label="Login" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button routerLink="/register" label="Register" styleClass="p-button-text p-button-secondary"></p-button>
         </div>
     </mat-toolbar>
 </header>

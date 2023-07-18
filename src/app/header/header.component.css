@@ -4,14 +4,16 @@
 .logo-container {
     display: flex;
     justify-content: center;
-}
-.logo-container a {
-    display: flex;
     height: 100%;
 }
-.logo-container a img {
-    width: 80%;
+.logo-container a {
+    background: url("./../../assets/img/crowdfunding.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3rem;
 }
+
 .sticky {
     margin: 0;
     border-radius: 0;

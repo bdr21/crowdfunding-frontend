@@ -5,8 +5,12 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
+import { ToastModule } from 'primeng/toast';
+import { BrowserModule } from '@angular/platform-browser';
+import { MessageService } from 'primeng/api';
+
 
 
 
@@ -21,11 +25,17 @@ import { AuthRoutingModule } from './auth-routing.module';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule,
+    ToastModule,
+    BrowserModule
   ],
   exports: [
     LoginComponent,
     RegistrationComponent
+  ],
+  providers: [
+    MessageService
   ]
 })
 export class AuthModule { }

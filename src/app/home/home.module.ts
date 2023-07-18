@@ -7,8 +7,10 @@ import { CarouselModule } from '@coreui/angular'
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from '../auth/auth.module';
-
-
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatButtonModule } from '@angular/material/button';
+import { SidebarModule } from 'primeng/sidebar'
+import { ButtonModule } from 'primeng/button'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import { AuthModule } from '../auth/auth.module';
     CarouselModule,
     NgbCarouselModule,
     BrowserModule,
-    AuthModule
+    AuthModule,
+    MatSidenavModule,
+    MatButtonModule,
+    SidebarModule,
+    ButtonModule
   ],
   exports: [
     BannerComponent,

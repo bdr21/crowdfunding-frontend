@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,12 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isHeaderSticky = false;
+
+  constructor(private sharedService: SharedService) {}
+
+  onLoginButtonClick() {
+    this.sharedService.setLoginButtonClicked(true);
+  }
 
   @HostListener('window:scroll')
   onWindowsScroll() {

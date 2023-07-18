@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { SharedService } from './shared.service';
+import { ButtonModule } from 'primeng/button'
 
 
 
@@ -27,12 +29,16 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ButtonModule
   ],
   exports: [
     CapitalizePipe,
     HeaderComponent,
     FooterComponent
+  ],
+  providers: [
+    SharedService
   ]
 })
 export class SharedModule { }

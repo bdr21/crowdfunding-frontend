@@ -1,17 +1,20 @@
-import { Component, TemplateRef } from '@angular/core';
-import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  closeResult: string | undefined;
-  constructor(private offcanvasService: NgbOffcanvas) {}
-  
-  openEnd(content: TemplateRef<any>) {
-    const container = document.querySelector('.offcanvas-cont');
-    this.offcanvasService.open(content, { container : container as HTMLElement, position: 'end' , panelClass: 'offcanvas-container custom-offcanvas'});
+export class HomeComponent implements OnInit {
+  loginButtonClicked: boolean = false;
+
+  constructor(private sharedService : SharedService) {
+  }
+
+  ngOnInit(): void {
+    this.sharedService.getLoginButtonClicked().subscribe(
+      (value : boolean) => { this.loginButtonClicked = value; }
+    );
   }
 }

@@ -1,38 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+export class LoginComponent {
+  username: string = "";
+  password: string = "";
+  rememberMe: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private messageService: MessageService) {}
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
-  }
-
-  get email() {
-    return this.loginForm.get('email');
-  }
-
-  get password() {
-    return this.loginForm.get('password');
-  }
-
-  onSubmit() {
-    if (this.loginForm.invalid) {
-      return;
+  login(): void {
+    // Perform login logic
+    if (this.username === 'admin' && this.password === 'password') {
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login successful' });
+    } else {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid credentials' });
     }
-    // Handle login logic here
-    const email = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
-    // Make API call or perform other actions as needed
   }
 }
