@@ -16,3 +16,18 @@ export interface IOrderItem {
     productName: string;
     itemCost: number;
 }
+
+export interface ILoginRequest {
+    email: string;
+    password: string;   
+}
+
+export interface ILoginResponse {
+    message: string;
+    status: string;
+    token: string;
+}
+export interface ISignUpResponse {
+    message: string;
+    status: string;
+}

@@ -8,6 +8,8 @@ import { SharedService } from '../shared/shared.service';
 })
 export class HomeComponent implements OnInit {
   loginButtonClicked: boolean = false;
+  signupButtonClicked: boolean = false;
+  loaderVisible: boolean = false;
 
   constructor(private sharedService : SharedService) {
   }
@@ -15,6 +17,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.getLoginButtonClicked().subscribe(
       (value : boolean) => { this.loginButtonClicked = value; }
+    );
+    this.sharedService.getSignupButtonClicked().subscribe(
+      (value : boolean) => { this.signupButtonClicked = value; }
+    );
+    this.sharedService.getLoaderVisible().subscribe(
+      (value : boolean) => { this.loaderVisible = value; }
     );
   }
 }

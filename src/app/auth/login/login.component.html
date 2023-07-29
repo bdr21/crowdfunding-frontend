@@ -1,0 +1,51 @@
+<!-- login.component.html -->
+<div class="login-container card">
+
+    <h2>Login</h2>
+
+    <div class="">
+        <div class="flex flex-column mb-3">
+            <label htmlFor="username">Username</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <input [(ngModel)]="username" pInputText/>
+            </div>
+            <!-- <small id="username-help">Enter your username or email.</small> -->
+        </div>
+
+        <div class="flex flex-column mb-3">
+            <label htmlFor="password">Password</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <p-password [(ngModel)]="password" [feedback]="false" [toggleMask]="true"></p-password>
+            </div>
+        </div>
+        
+        <div class="checkbox-group mb-3">
+            <p-checkbox class="mr-1" formControlName="city" value="Remember me" inputId="rm"></p-checkbox>
+            <label for="rm">Remember Me?</label>
+        </div>
+
+        <span class="p-buttonset mb-3">
+            <button class="p-button-success" (click)="login()" pButton pRipple label="Login" icon="pi pi-check"></button>
+            <button class="p-button-secondary p-button-outlined" pButton pRipple label="Reset" icon="pi pi-times"></button>
+        </span>
+
+
+        <div class="flex flex-column justify-between align-center">
+            <div>
+                <a href="#">I forgot my password</a>
+            </div>
+            <div>
+                <a href="#">You don't have an account? Sign up</a>
+            </div>
+        </div>
+
+    </div>
+
+    <p-toast [style]="{ marginTop: '20px' }" [position]="'top-center'"></p-toast>
+</div>

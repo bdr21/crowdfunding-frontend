@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CapitalizePipe } from './pipes';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../layout/header/header.component';
+import { FooterComponent } from '../layout/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,8 +18,6 @@ import { ButtonModule } from 'primeng/button'
 @NgModule({
   declarations: [
     CapitalizePipe,
-    HeaderComponent,
-    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -27,15 +25,11 @@ import { ButtonModule } from 'primeng/button'
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    ButtonModule
   ],
   exports: [
     CapitalizePipe,
-    HeaderComponent,
-    FooterComponent
   ],
   providers: [
     SharedService

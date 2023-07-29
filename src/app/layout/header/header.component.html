@@ -1,0 +1,17 @@
+<header>
+    <mat-toolbar [class.sticky]="isHeaderSticky">
+        <div class="nav-links">
+            <p-button routerLink="/" label="Home" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button routerLink="/campaigns" label="Campaigns" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button routerLink="/create-campaign" label="Create Campaign" styleClass="p-button-text p-button-secondary"></p-button>
+        </div>
+        <div class="logo-container">
+            <a routerLink="/"></a>
+        </div>
+        <div class="auth-links">
+            <p-button *ngIf="(authService.loggedIn$ | async)" routerLink="/profile" label="Profile" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button *ngIf="!(authService.loggedIn$ | async)" (click)="onLoginButtonClick()" label="Login" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button *ngIf="!(authService.loggedIn$ | async)" (click)="onSignupButtonClick()" label="Register" styleClass="p-button-text p-button-secondary"></p-button>
+        </div>
+    </mat-toolbar>
+</header>

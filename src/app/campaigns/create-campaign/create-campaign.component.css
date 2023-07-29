@@ -1,0 +1,33 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.logo-container a {
+    background: url("/assets/img/crowdfunding.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Hide the custom PrimeNG scrollbar */
+.custom-scroll-panel ::ng-deep ::-webkit-scrollbar {
+    display: none;
+}
+
+/* Optional: Add some padding to the ScrollPanel container to avoid content overlapping with the scrollbar */
+.custom-scroll-panel {
+    padding-right: 10px;
+    /* Adjust the padding as needed */
+    overflow-y: scroll;
+    /* Enable the native browser scrollbar */
+}

@@ -7,6 +7,9 @@ import { BehaviorSubject } from "rxjs";
 
 export class SharedService {
     private loginButtonClicked = new BehaviorSubject<boolean>(false);
+    private signupButtonClicked = new BehaviorSubject<boolean>(false);
+    private loaderVisible = new BehaviorSubject<boolean>(false);
+
 
     constructor() {}
 
@@ -16,5 +19,21 @@ export class SharedService {
 
     getLoginButtonClicked() {
         return this.loginButtonClicked.asObservable();
+    }
+
+    setSignupButtonClicked(value : boolean) {
+        this.signupButtonClicked.next(value);
+    }
+
+    getSignupButtonClicked() {
+        return this.signupButtonClicked.asObservable();
+    }
+
+    setLoaderVisible(value : boolean) {
+        this.loaderVisible.next(value);
+    }
+
+    getLoaderVisible() {
+        return this.loaderVisible.asObservable();
     }
 }

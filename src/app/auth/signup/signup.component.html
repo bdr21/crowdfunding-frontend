@@ -1,0 +1,76 @@
+<!-- signup.component.html -->
+<div class="signup-container card">
+
+    <h2>Sign Up</h2>
+
+    <form [formGroup]="signupForm">
+        <div class="flex flex-column mb-3">
+            <label for="firstName">First Name</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <input formControlName="firstName" name="firstName" pInputText />
+            </div>
+        </div>
+
+        <div class="flex flex-column mb-3">
+            <label for="lastName">Last Name</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <input formControlName="lastName" name="lastName" pInputText />
+            </div>
+        </div>
+
+        <div class="flex flex-column mb-3">
+            <label for="email">Email</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-envelope"></i>
+                </span>
+                <input formControlName="email" name="email" pInputText />
+            </div>
+        </div>
+
+        <div class="flex flex-column mb-3">
+            <label for="password">Password</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <p-password formControlName="password" name="password" [feedback]="false" [toggleMask]="true"></p-password>
+            </div>
+        </div>
+
+        <div class="flex flex-column mb-3">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <p-password formControlName="confirmPassword" name="confirmPassword" [feedback]="false"
+                    [toggleMask]="true"></p-password>
+            </div>
+        </div>
+
+        <span class="p-buttonset mb-3">
+            <button class="p-button-success" (click)="signup()" pButton pRipple label="Sign Up"
+                icon="pi pi-check"></button>
+            <button class="p-button-secondary p-button-outlined" pButton pRipple label="Reset"
+                icon="pi pi-times"></button>
+        </span>
+
+        <div class="flex flex-column justify-between align-center">
+            <div>
+                <a href="#">Already have an account? Login</a>
+            </div>
+            <div>
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+    </form>
+
+    <p-toast [style]="{ marginTop: '20px' }" [position]="'top-center'"></p-toast>
+</div>
