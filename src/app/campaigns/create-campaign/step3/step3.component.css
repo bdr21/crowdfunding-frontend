@@ -1,0 +1,22 @@
+.custom-dropzone {
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto 10rem;
+    /* margin-bottom: 100rem; */
+    justify-content: center;
+}
+
+ngx-dropzone-image-preview {
+    width: 100% !important;
+    justify-content: center !important;
+    height: unset !important;
+    margin: unset !important;
+    max-height: 90% !important;
+    min-width: unset;
+    min-height: unset !important;
+    max-width: unset;
+}
+
+::ng-deep ngx-dropzone-image-preview img {
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+<div class="formgrid grid mx-auto w-6">
+
+    <div class="title-container flex align-items-center justify-content-center w-full">
+        <h3 class="text-3xl mb-1">How much would you like to raise?</h3>
+    </div>
+
+    <div class="location-container w-full">
+        <div class="flex flex-column align-items-center justify-content-star w-full">
+            <p class="text-xl text-color-secondary">
+                You can always change your goal as you go.
+            </p>
+        </div>
+        <div class="goal-amount-container flex align-items-center justify-content-center w-full">
+            <div class="field col-7 flex flex-column">
+                <label for="category">Starting Goal</label>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-credit-card"></i>
+                    <input class="w-full" type="text" pInputText />
+                    <p-tag value="MAD" [rounded]="true"></p-tag>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="continue-button-container w-full flex justify-content-center mb-8">
+        <div class="flex align-items-center justify-content-between col-7">
+            <p-button (click)="previousStep()" icon="pi pi-arrow-left" styleClass="p-button-outlined"></p-button>
+            <p-button (click)="nextStep()" label="Continue" icon="pi pi-arrow-right" iconPos="right"></p-button>
+        </div>
+    </div>
+</div>

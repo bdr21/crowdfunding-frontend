@@ -7,8 +7,6 @@ import { CreateCampaignComponent } from './campaigns/create-campaign/create-camp
 
 const routes: Routes = [
   { path: '', pathMatch:'full', component: HomeComponent },
-  { path: 'campaigns', component: CampaignsComponent },
-  { path: 'campaigns/new', component: CreateCampaignComponent }
 ];
 
 @NgModule({

@@ -6,25 +6,7 @@
 </div>
 <div class="steps-container">
     <p-toast></p-toast>
-    <p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex" (activeIndexChange)="onActiveIndexChange($event)"></p-steps>
+    <p-steps [model]="items" [readonly]="false"></p-steps>
 </div>
-<p-scrollPanel [style]="{ width: '100%', height: '150px' }" class="custom-scroll-panel">
-    <div class="p-grid p-dir-col">
-        <div class="p-col">
-            <form (ngSubmit)="onSubmit()" #campaignForm="ngForm" class="p-grid p-fluid">
-                <div class="p-col-12 p-md-6">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" pInputText required>
-                </div>
-                <div class="p-col-12 p-md-6">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="description" pInputText required>
-                </div>
-                <!-- Add other campaign fields here (e.g., imageUrl, videoUrl, category, etc.) -->
-                <div class="p-col-12">
-                    <button pButton type="submit" label="Create Campaign"></button>
-                </div>
-            </form>
-        </div>
-    </div>
-</p-scrollPanel>
+
+<router-outlet></router-outlet>

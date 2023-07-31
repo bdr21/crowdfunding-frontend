@@ -19,15 +19,10 @@
     margin-bottom: 2rem;
 }
 
-/* Hide the custom PrimeNG scrollbar */
-.custom-scroll-panel ::ng-deep ::-webkit-scrollbar {
-    display: none;
+::ng-deep .p-steps-number {
+    margin-bottom: 1.5rem;
 }
 
-/* Optional: Add some padding to the ScrollPanel container to avoid content overlapping with the scrollbar */
-.custom-scroll-panel {
-    padding-right: 10px;
-    /* Adjust the padding as needed */
-    overflow-y: scroll;
-    /* Enable the native browser scrollbar */
+::ng-deep .p-dropdown.p-component {
+    display: flex;
 }

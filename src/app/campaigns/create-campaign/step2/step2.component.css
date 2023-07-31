@@ -1,0 +1,16 @@
+::ng-deep .p-tag {
+    background: #f1f1f1;
+    color: black;
+    text-transform: uppercase;
+}
+p-tag {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: unset;
+}
+/* ::ng-deep {
+
+} */
+

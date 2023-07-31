@@ -1,0 +1,54 @@
+<form #campaignForm="ngForm" class="">
+    <div class="formgrid grid mx-auto w-6">
+
+        <div class="title-container flex align-items-center justify-content-center w-full">
+            <h3 class="text-3xl mb-6">Let's get you set up</h3>
+        </div>
+
+        <div class="location-container w-full">
+            <div class="flex flex-column align-items-center justify-content-star w-full">
+                <p class="text-2xl mb-1">
+                    Select your city and zipcode.
+                </p>
+                <p class="text-xl text-color-secondary">
+                    This will help backers find your project.
+                </p>
+            </div>
+            <div class="flex align-items-center justify-content-center w-full">
+                <div class="field col-4">
+                    <label for="category">City</label>
+                    <p-dropdown id="category" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
+                        class="w-full">
+                    </p-dropdown>
+                </div>
+                <div class="field col-3">
+                    <label for="lastname2">Zip Code</label>
+                    <input id="lastname2" type="text" class="p-dropdown p-component p-inputtext cursor-auto w-full">
+                </div>
+            </div>
+        </div>
+
+        <div class="category-container w-full">
+            <div class="flex align-items-center justify-content-center w-full">
+                <p class="text-2xl">
+                    What best describes why you're fundraising?
+                </p>
+            </div>
+            <div class="flex align-items-center justify-content-center w-full">
+                <div class="field col-7">
+                    <label for="category">Category</label>
+                    <p-dropdown id="category" [options]="cities" optionLabel="name" class="w-full">
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+
+        <div class="continue-button-container w-full flex justify-content-center mb-8">
+            <div class="flex align-items-center justify-content-end col-7">
+                <div>
+                    <p-button (click)="nextStep()" label="Continue" icon="pi pi-arrow-right" iconPos="right"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

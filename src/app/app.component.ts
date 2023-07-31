@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  showHeader(): boolean {
+  showHeaderFooter(): boolean {
     // Replace 'create-campaign' with the actual route path of the Create Campaign component
     return !this.router.url.includes('campaigns/new');
   }

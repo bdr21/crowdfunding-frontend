@@ -14,32 +14,46 @@ export class CreateCampaignComponent {
 
   items: MenuItem[] | undefined;
 
-    activeIndex: number = 0;
+  activeIndex: number = 0;
 
-    constructor(public messageService: MessageService) {}
+  constructor(public messageService: MessageService) { }
 
-    onActiveIndexChange(event: number) {
-        this.activeIndex = event;
-    }
+  onActiveIndexChange(event: number) {
+    this.activeIndex = event;
+  }
 
-    ngOnInit() {
-        this.items = [
-            {
-                label: 'Personal',
-                command: (event: any) => this.messageService.add({severity:'info', summary:'First Step', detail: event.item.label})
-            },
-            {
-                label: 'Seat',
-                command: (event: any) => this.messageService.add({severity:'info', summary:'Second Step', detail: event.item.label})
-            },
-            {
-                label: 'Payment',
-                command: (event: any) => this.messageService.add({severity:'info', summary:'Third Step', detail: event.item.label})
-            },
-            {
-                label: 'Confirmation',
-                command: (event: any) => this.messageService.add({severity:'info', summary:'Last Step', detail: event.item.label})
-            }
-        ];
-    }
+  selectedItems: any[] = [];
+  selectedItem: any;
+
+  dropdownOptions: any[] = [
+    { label: 'Option 1', value: 'option1' },
+    { label: 'Option 2', value: 'option2' },
+    { label: 'Option 3', value: 'option3' },
+    // Add more options as needed
+  ];
+
+  onChipChange(event: any) {
+    console.log(this.selectedItems);
+  }
+
+  ngOnInit() {
+    this.items = [
+      {
+        label: '',
+        routerLink: 'step1'
+      },
+      {
+        label: '',
+        routerLink: 'step2'
+      },
+      {
+        label: '',
+        routerLink: 'step3'
+      },
+      {
+        label: '',
+        routerLink: 'step4'
+      }
+    ];
+  }
 }
