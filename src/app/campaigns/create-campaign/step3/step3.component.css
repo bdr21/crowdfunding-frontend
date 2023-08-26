@@ -1,9 +1,17 @@
+.custom-dropzone, .buttons-container {
+    /* width: 40rem; */
+}
+
 .custom-dropzone {
-    width: 30rem;
     height: 30rem;
-    margin: 0 auto 10rem;
-    /* margin-bottom: 100rem; */
+    /* margin: 0 auto 10rem; */
     justify-content: center;
+
+    border-radius: 0.375rem;
+    border-width: 2px;
+    border-style: dashed;
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 ngx-dropzone-image-preview {
@@ -20,3 +28,4 @@ ngx-dropzone-image-preview {
 ::ng-deep ngx-dropzone-image-preview img {
     width: 100%;
 }
+

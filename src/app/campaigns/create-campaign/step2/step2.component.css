@@ -10,6 +10,12 @@ p-tag {
     transform: translateY(-50%);
     background: unset;
 }
+p-inputnumber {
+    display: block !important;
+}
+::ng-deep .p-inputnumber {
+    display: block !important;
+}
 /* ::ng-deep {
 
 } */

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
+import { Subscription } from 'rxjs';
+import { CreateCampaignService } from 'src/app/_services/create-campaign.service';
 
 @Component({
   selector: 'app-create-campaign',
@@ -16,7 +18,7 @@ export class CreateCampaignComponent {
 
   activeIndex: number = 0;
 
-  constructor(public messageService: MessageService) { }
+  constructor(public messageService: MessageService, public componentService: CreateCampaignService) { }
 
   onActiveIndexChange(event: number) {
     this.activeIndex = event;
@@ -55,5 +57,8 @@ export class CreateCampaignComponent {
         routerLink: 'step4'
       }
     ];
+
   }
+
+
 }

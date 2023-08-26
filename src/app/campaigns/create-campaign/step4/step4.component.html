@@ -1,1 +1,73 @@
-<p>step4 works!</p>
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div
+                class="px-4 py-5 space-y-6 sm:p-6 bg-white shadow sm:rounded-md sm:overflow-hidden space-y-8 divide-y divide-gray-200">
+                <div class="form-part-container">
+                    <div class="titles-container">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            Who and what are you raising funds for?
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            Tell your story
+                        </p>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4">
+                        <div class="sm:col-span-3">
+                            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <input type="text" name="title" id="title" [(ngModel)]="step4Information.title"
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                    placeholder="" aria-invalid="true" aria-describedby="title-error">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <!-- Heroicon name: solid/exclamation-circle -->
+                                    <span
+                                        class="h-5 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                        50 </span>
+                                </div>
+                            </div>
+                            <!-- <p class="mt-2 text-sm text-red-600" id="title-error">Your password must be less than 4
+                                characters.</p> -->
+
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                            <div class="mt-1">
+                                <textarea rows="4" name="comment" id="comment" [(ngModel)]="step4Information.description"
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-part-container pt-4">
+                    <div class="flex justify-between">
+                        <button type="button" (click)="previousStep()"
+                            class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5">
+                                </path>
+                            </svg>
+                            Back
+                        </button>
+                        <button type="button" (click)="nextStep()"
+                            class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Review
+                            <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

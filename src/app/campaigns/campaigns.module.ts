@@ -19,15 +19,23 @@ import { Step3Component } from './create-campaign/step3/step3.component';
 import { Step4Component } from './create-campaign/step4/step4.component';
 import { TagModule } from 'primeng/tag';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CreateCampaignService } from '../_services/create-campaign.service';
+import { ReviewStepComponent } from './create-campaign/review-step/review-step.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
+  providers: [
+    CreateCampaignService
+  ],
   declarations: [
     CampaignsComponent,
     CreateCampaignComponent,
     Step1Component,
     Step2Component,
     Step3Component,
-    Step4Component
+    Step4Component,
+    ReviewStepComponent
   ],
   imports: [
     CampaignsRoutingModule,
@@ -43,7 +51,9 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     DropdownModule,
     ButtonModule,
     TagModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    InputTextareaModule,
+    InputNumberModule
   ]
 })
 export class CampaignsModule { }

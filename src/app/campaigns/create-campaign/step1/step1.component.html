@@ -1,54 +1,74 @@
-<form #campaignForm="ngForm" class="">
-    <div class="formgrid grid mx-auto w-6">
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div
+                class="px-4 py-5 space-y-6 sm:p-6 bg-white shadow sm:rounded-md sm:overflow-hidden space-y-8 divide-y divide-gray-200">
+                <div class="form-part-container">
+                    <div class="titles-container">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            Select your city and zipcode
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            This will help backers find your project
+                        </p>
+                    </div>
 
-        <div class="title-container flex align-items-center justify-content-center w-full">
-            <h3 class="text-3xl mb-6">Let's get you set up</h3>
-        </div>
+                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            <label for="city" class="block text-sm font-medium text-gray-700">City</label>
+                            <select id="city" name="city" [(ngModel)]="step1Information.city"
+                                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option>Casa</option>
+                                <option selected>Rabat</option>
+                                <option>Fès</option>
+                            </select>
+                        </div>
 
-        <div class="location-container w-full">
-            <div class="flex flex-column align-items-center justify-content-star w-full">
-                <p class="text-2xl mb-1">
-                    Select your city and zipcode.
-                </p>
-                <p class="text-xl text-color-secondary">
-                    This will help backers find your project.
-                </p>
-            </div>
-            <div class="flex align-items-center justify-content-center w-full">
-                <div class="field col-4">
-                    <label for="category">City</label>
-                    <p-dropdown id="category" [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"
-                        class="w-full">
-                    </p-dropdown>
+                        <div class="sm:col-span-2">
+                            <label for="zipcode" class="block text-sm font-medium text-gray-700">Zipcode</label>
+                            <div class="mt-1">
+                                <input type="text" name="zipcode" id="zipcode" [(ngModel)]="step1Information.zipcode"
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                    placeholder="">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="field col-3">
-                    <label for="lastname2">Zip Code</label>
-                    <input id="lastname2" type="text" class="p-dropdown p-component p-inputtext cursor-auto w-full">
+                <div class="form-part-container pt-8">
+                    <div>
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            What best describes why you're fundraising?
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            Choose the category closest to your topic
+                        </p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                            <select id="category" name="category" [(ngModel)]="step1Information.category"
+                                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option>Animals</option>
+                                <option selected>Medical</option>
+                                <option>Funeral</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="category-container w-full">
-            <div class="flex align-items-center justify-content-center w-full">
-                <p class="text-2xl">
-                    What best describes why you're fundraising?
-                </p>
-            </div>
-            <div class="flex align-items-center justify-content-center w-full">
-                <div class="field col-7">
-                    <label for="category">Category</label>
-                    <p-dropdown id="category" [options]="cities" optionLabel="name" class="w-full">
-                    </p-dropdown>
-                </div>
-            </div>
-        </div>
-
-        <div class="continue-button-container w-full flex justify-content-center mb-8">
-            <div class="flex align-items-center justify-content-end col-7">
-                <div>
-                    <p-button (click)="nextStep()" label="Continue" icon="pi pi-arrow-right" iconPos="right"></p-button>
+                <div class="form-part-container pt-4">
+                    <div class="flex justify-end">
+                        <button type="button" (click)="nextStep()"
+                            class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Continue
+                            <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</form>
+</div>

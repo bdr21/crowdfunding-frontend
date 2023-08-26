@@ -6,6 +6,7 @@ import { Step1Component } from './create-campaign/step1/step1.component';
 import { Step2Component } from './create-campaign/step2/step2.component';
 import { Step3Component } from './create-campaign/step3/step3.component';
 import { Step4Component } from './create-campaign/step4/step4.component';
+import { ReviewStepComponent } from './create-campaign/review-step/review-step.component';
 
 const routes: Routes = [
     { path: 'campaigns', component: CampaignsComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
             { path: 'step2', component: Step2Component },
             { path: 'step3', component: Step3Component },
             { path: 'step4', component: Step4Component },
+            { path: 'review', component: ReviewStepComponent },
             // Add more steps as needed
         ]
     }

@@ -1,31 +1,65 @@
-<div class="formgrid grid mx-auto w-6">
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div
+                class="px-4 py-5 space-y-6 sm:p-6 bg-white shadow sm:rounded-md sm:overflow-hidden space-y-8 divide-y divide-gray-200">
+                <div class="form-part-container">
+                    <div class="titles-container">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">
+                            How much would you like to raise?
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            You can always change your goal as you go
+                        </p>
+                    </div>
 
-    <div class="title-container flex align-items-center justify-content-center w-full">
-        <h3 class="text-3xl mb-1">How much would you like to raise?</h3>
-    </div>
+                    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            <label for="price" class="block text-sm font-medium text-gray-700">Starting Goal</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm"> $ </span>
+                                </div>
+                                <!-- <input type="text" name="price" id="price" [(ngModel)]="step2Information.goal"
+                                    class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                                    placeholder="0.00" aria-describedby="price-currency"> -->
+                                <p-inputNumber name="price" id="price" [(ngModel)]="step2Information.goal"
+                                    class=""
+                                    placeholder="0.00" aria-describedby="price-currency" inputId="integeronly"
+                                    inputStyleClass="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                                >
+                                </p-inputNumber>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm" id="price-currency"> MAD </span>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="location-container w-full">
-        <div class="flex flex-column align-items-center justify-content-star w-full">
-            <p class="text-xl text-color-secondary">
-                You can always change your goal as you go.
-            </p>
-        </div>
-        <div class="goal-amount-container flex align-items-center justify-content-center w-full">
-            <div class="field col-7 flex flex-column">
-                <label for="category">Starting Goal</label>
-                <span class="p-input-icon-left">
-                    <i class="pi pi-credit-card"></i>
-                    <input class="w-full" type="text" pInputText />
-                    <p-tag value="MAD" [rounded]="true"></p-tag>
-                </span>
+                    </div>
+                </div>
+                <div class="form-part-container pt-4">
+                    <div class="flex justify-between">
+                        <button type="button" (click)="previousStep()"
+                            class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5">
+                                </path>
+                            </svg>
+                            Back
+                        </button>
+                        <button type="button" (click)="nextStep()"
+                            class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Continue
+                            <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="continue-button-container w-full flex justify-content-center mb-8">
-        <div class="flex align-items-center justify-content-between col-7">
-            <p-button (click)="previousStep()" icon="pi pi-arrow-left" styleClass="p-button-outlined"></p-button>
-            <p-button (click)="nextStep()" label="Continue" icon="pi pi-arrow-right" iconPos="right"></p-button>
         </div>
     </div>
 </div>

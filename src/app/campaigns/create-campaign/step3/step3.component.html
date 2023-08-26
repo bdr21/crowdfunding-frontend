@@ -1,10 +1,73 @@
-<div class="custom-dropzone" ngx-dropzone [multiple]="false" [accept]="'image/*'" (change)="onSelect($event)">
-	<ngx-dropzone-label>
-		<div>
-			<h2>My custom dropzone</h2>
+<div class="bg-gray-100">
+	<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-3xl mx-auto">
+			<div
+				class="px-4 py-5 space-y-6 sm:p-6 bg-white shadow sm:rounded-md sm:overflow-hidden space-y-8 divide-y divide-gray-200">
+				<div class="form-part-container">
+					<div class="titles-container">
+						<h3 class="text-lg leading-6 font-medium text-gray-900">
+							Pick a cover photo
+						</h3>
+					</div>
+
+					<div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-1">
+						<div class="sm:col-span-3">
+							<div class="custom-dropzone w-full border-2 border-gray-300 border-dashed rounded-md" ngx-dropzone
+								[multiple]="false" [accept]="'image/*'" (change)="onSelect($event)">
+								<ngx-dropzone-label>
+									<div class="space-y-1 text-center">
+										<svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"
+											viewBox="0 0 48 48" aria-hidden="true">
+											<path
+												d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+												stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+										</svg>
+										<div class="flex text-sm text-gray-600">
+											<label for="file-upload"
+												class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+												<span>Upload a file</span>
+												<input id="file-upload" name="file-upload" type="file" class="sr-only">
+											</label>
+											<p class="pl-1">or drag and drop</p>
+										</div>
+										<p class="text-xs text-gray-500">
+											PNG, JPG, GIF up to 10MB
+										</p>
+									</div>
+								</ngx-dropzone-label>
+								<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngIf="file"
+									[file]="file" [removable]="true" (removed)="onRemove($event)">
+									<!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+								</ngx-dropzone-image-preview>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="form-part-container pt-4">
+					<div class="flex justify-between">
+						<button type="button" (click)="previousStep()"
+							class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+							<svg class="-ml-1 mr-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5">
+								</path>
+							</svg>
+							Back
+						</button>
+						<button type="button" (click)="nextStep()"
+							class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+							Continue
+							<svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5"
+								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
-	</ngx-dropzone-label>
-	<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngIf="file" [file]="file" [removable]="true" (removed)="onRemove($event)">
-		<!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
-	</ngx-dropzone-image-preview>
+	</div>
 </div>

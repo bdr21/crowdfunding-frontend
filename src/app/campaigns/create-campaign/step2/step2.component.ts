@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CreateCampaignService } from 'src/app/_services/create-campaign.service';
 
 @Component({
   selector: 'app-step2',
@@ -8,17 +9,22 @@ import { Router } from '@angular/router';
 })
 export class Step2Component implements OnInit {
 
-  constructor(private router : Router) { }
+  step2Information: any;
+
+  constructor(private router: Router, private componentService: CreateCampaignService) { }
+
   ngOnInit(): void {
-      
+    this.step2Information = this.componentService.getCampaignInformation().step2Information;
   }
 
-  nextStep() : void {
+  nextStep(): void {
     console.log("Next Step");
+    this.componentService.campaignInformation.step2Information = this.step2Information;
+
     this.router.navigate(['campaigns/new/step3']);
   }
 
-  previousStep() : void {
+  previousStep(): void {
     console.log("Previous Step");
     this.router.navigate(['campaigns/new/step1']);
   }
