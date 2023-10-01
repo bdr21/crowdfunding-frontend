@@ -24,6 +24,7 @@
     "@coreui/icons-angular": "^4.5.8",
     "@ng-bootstrap/ng-bootstrap": "^15.1.0",
     "@tailwindcss/forms": "^0.5.4",
+    "flowbite": "^1.8.1",
     "ngx-dropzone": "^3.1.0",
     "primeicons": "^6.0.1",
     "primeng": "^16.0.2",

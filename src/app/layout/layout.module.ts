@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { LoaderComponent } from './loader/loader.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -30,6 +31,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     MatToolbarModule,
     ProgressSpinnerModule,
     MatIconModule,
+    RouterModule,
     // ReactiveFormsModule,
     // MatCardModule,
     // MatFormFieldModule,

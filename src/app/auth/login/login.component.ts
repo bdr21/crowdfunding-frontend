@@ -12,49 +12,73 @@ import { ILoginResponse } from 'src/app/shared/interfaces';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  username: string = "";
+export class LoginComponent implements OnInit {
+  open: boolean = false;
+  email: string = "";
   password: string = "";
   rememberMe: boolean | undefined = false;
   showPassword: boolean = false;
+  z1002class:boolean = false;
 
   constructor(private messageService: MessageService,
     private authService: AuthService,
-    private sharedService: SharedService ) {}
+    private sharedService: SharedService) { }
+
+  async setSlideOverZIndex() {
+    if (this.open) {
+      this.z1002class = true;
+    } else {
+      const result = await new Promise<boolean>((resolve) => {
+        setTimeout(() => {
+          resolve(false);
+        }, 900);
+      });
+      this.z1002class = result;
+    }
+  }
+
+
+  ngOnInit(): void {
+    this.sharedService.getLoginButtonClicked().subscribe(
+      (value: boolean) => {
+        this.open = value;
+      }
+    );
+  }
 
   login(): void {
     // Prepare the login request payload
     const loginData = {
-      email: this.username,
+      email: this.email,
       password: this.password
     };
 
-    console.log(this.username, this.password);
+    console.log(this.email, this.password);
 
     this.authService
       .login("/users/login", loginData)
       .subscribe({
-        next : (response) => {
+        next: (response) => {
           this.handleLoginSuccess(response);
         },
-        error : (error) => {
+        error: (error) => {
           this.handleLoginError(error);
         }
       })
   }
 
-  handleLoginSuccess(response: ILoginResponse) : void {
+  handleLoginSuccess(response: ILoginResponse): void {
     console.log("login success", response);
     this.setAuthServiceLoggedIn(true);
     this.setSharedServiceLoaderVisible(true);
     this.setAuthServiceToken(response.token);
   }
 
-  handleLoginError(error: any) : void {
+  handleLoginError(error: any): void {
     console.log("login error", error);
   }
 
-  setAuthServiceLoggedIn(state: boolean) : void {
+  setAuthServiceLoggedIn(state: boolean): void {
     this.authService.setLoggedIn(state);
   }
   setSharedServiceLoaderVisible(state: boolean) {
@@ -64,23 +88,3 @@ export class LoginComponent {
     this.authService.setToken(token);
   }
 }
-
-
-
-// Make an HTTP POST request to the server
-    // this.http.post<any>('http://localhost:8080/users/login', loginData)
-    //   .subscribe({
-    //     next: (response) => {
-    //       // Process the response from the server
-    //       if (response.success) {
-    //         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login successful' });
-    //       } else {
-    //         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid credentials' });
-    //       }
-    //     },
-    //     error: (error) => {
-    //       // Handle any errors that occur during the HTTP request
-    //       console.error('Error occurred:', error);
-    //       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'An error occurred during login' });
-    //     }
-    //   });
