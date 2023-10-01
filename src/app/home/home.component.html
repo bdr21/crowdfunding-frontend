@@ -2,13 +2,11 @@
 <app-home-featured-campaigns></app-home-featured-campaigns>
 
 <div class="card flex justify-content-center">
-    <!-- <p-sidebar [transitionOptions]="'300ms cubic-bezier(0, 0, 0.2, 1)'"  position="right" [class.showing]="loginButtonClicked">
-    </p-sidebar> -->
+
     <app-login></app-login>
-    <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button> -->
-    <p-sidebar [(visible)]="signupButtonClicked" position="right" [class.showing]="signupButtonClicked">
-        <app-signup></app-signup>
-    </p-sidebar>
+
+    <app-signup></app-signup>
+    
 </div>
 
 <app-loader [show]="loaderVisible" ></app-loader>

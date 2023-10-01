@@ -2,6 +2,16 @@
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+    margin-top: 8.5rem;
+    padding-top: 2rem;
+}
+
+#headingCreateCampaign {
+    background: url(/assets/img/kayak-team.jpg);
+    /* background-ima linear-gradient(rgb(243, 244, 246, 0.5), rgb(243, 244, 246, 0.5)),  ge:; */
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .logo-container a {

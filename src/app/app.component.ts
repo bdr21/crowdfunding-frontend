@@ -7,9 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-  // template: `
-  //   <router-outlet></router-outlet>
-  // `,
 })
 export class AppComponent implements OnInit {
   title = 'angular-one';
@@ -27,6 +24,7 @@ export class AppComponent implements OnInit {
 
   showHeaderFooter(): boolean {
     // Replace 'create-campaign' with the actual route path of the Create Campaign component
-    return !this.router.url.includes('campaigns/new');
+    // return !this.router.url.includes('campaigns/new');
+    return true;
   }
 }

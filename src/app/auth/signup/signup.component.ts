@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../auth.service';
 import { TOKEN_KEY_NAME } from 'src/app/shared/constants';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,13 +12,15 @@ import { TOKEN_KEY_NAME } from 'src/app/shared/constants';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  open: boolean = false;
   showPassword: boolean = false;
   
   signupForm!: FormGroup;
 
   constructor(private messageService: MessageService,
     private httpService: AuthService,
-    private formBuilder: FormBuilder)
+    private formBuilder: FormBuilder,
+    private sharedService: SharedService)
     {
   }
   
@@ -28,7 +31,13 @@ export class SignupComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', [Validators.required, this.matchPassword.bind(this)]],
-      })
+      });
+
+      this.sharedService.getSignupButtonClicked().subscribe(
+        (value: boolean) => {
+          this.open = value;
+        }
+      );
   }
   
   signup(): void {

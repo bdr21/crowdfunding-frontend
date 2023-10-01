@@ -8,3 +8,10 @@
 .signup-container {
     border: unset;
 }
+
+#slideOverSignUpContainer {
+    right: 0rem;
+    top: 0;
+    bottom: 0;
+    left: calc(100% - 42rem);
+}

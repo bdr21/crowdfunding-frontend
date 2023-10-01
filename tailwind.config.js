@@ -13,6 +13,10 @@ module.exports = {
       },
       zIndex: {
         '1002': '1002',
+        '1003': '1003',
+      },
+      transitionDuration: {
+        '3000': '3000ms',
       }
     },
   },

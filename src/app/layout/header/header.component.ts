@@ -14,6 +14,12 @@ export class HeaderComponent {
   @ViewChild('headerSearchBarContainer')
   headerSearchBarContainer!: ElementRef;
 
+  @ViewChild('header')
+  header!: ElementRef;
+
+  @ViewChild('headerContent')
+  headerContent!: ElementRef;
+
   @ViewChild('toggleButton')
   toggleButton!: ElementRef;
 
@@ -60,9 +66,23 @@ export class HeaderComponent {
   onWindowsScroll() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (scrollTop > 100) {
-      this.headerSearchBarContainer.nativeElement.classList.add('hidden');
+      // this.headerSearchBarContainer.nativeElement.classList.add('hidden');
+      this.header.nativeElement.classList.add('bg-white');
+      this.header.nativeElement.classList.remove('bg-transparent');
+      this.header.nativeElement.classList.add('shadow');
+      this.header.nativeElement.classList.remove('px-4');
+      this.header.nativeElement.classList.remove('pt-4');
+      this.headerContent.nativeElement.classList.remove('rounded-lg');
+      this.headerContent.nativeElement.classList.remove('shadow');
     } else {
-      this.headerSearchBarContainer.nativeElement.classList.remove('hidden');
+      // this.headerSearchBarContainer.nativeElement.classList.remove('hidden');
+      this.header.nativeElement.classList.remove('bg-white');
+      this.header.nativeElement.classList.add('bg-transparent');
+      this.header.nativeElement.classList.remove('shadow');
+      this.header.nativeElement.classList.add('px-4');
+      this.header.nativeElement.classList.add('pt-4');
+      this.headerContent.nativeElement.classList.add('rounded-lg');
+      this.headerContent.nativeElement.classList.add('shadow');
     }
   }
 }
