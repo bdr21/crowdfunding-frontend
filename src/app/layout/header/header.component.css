@@ -1,3 +1,7 @@
+
+#largeScreenNav {
+    border-top: none;
+}
 .auth-links {
     justify-self: end;
 }

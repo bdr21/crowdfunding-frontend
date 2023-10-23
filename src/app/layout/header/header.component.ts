@@ -33,8 +33,10 @@ export class HeaderComponent {
     this.renderer.listen('window', 'click', (e: Event) => {
       /** https://stackoverflow.com/a/57391798 */
 
-      if (!this.toggleButton.nativeElement.contains(e.target) && !this.menu.nativeElement.contains(e.target)) {
-        this.isMenuOpen = false;
+      if (this.toggleButton && this.menu) {
+        if (!this.toggleButton.nativeElement.contains(e.target) && !this.menu.nativeElement.contains(e.target)) {
+          this.isMenuOpen = false;
+        }
       }
     });
   }

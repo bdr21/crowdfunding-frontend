@@ -23,6 +23,14 @@ export class LoginComponent implements OnInit {
   constructor(private messageService: MessageService,
     private authService: AuthService,
     private sharedService: SharedService) { }
+    
+  closeSlideOver() {
+    this.open = false;
+    setTimeout(() => {
+      this.z1002class = true;
+    }
+    , 3000);
+  }
 
   async setSlideOverZIndex() {
     if (this.open) {

@@ -19,7 +19,7 @@
                                     <div class="ml-3 h-7 flex items-center">
                                         <button type="button"
                                             class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                            (click)="open = false">
+                                            (click)="closeSlideOver()">
                                             <span class="sr-only">Close panel</span>
                                             <svg class="h-6 w-6" x-description="Heroicon name: outline/x"
                                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -143,7 +143,7 @@
 </div>
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div (click)="open = false" [ngClass]="{'z-1002': open, '-z-10': !open}" class="fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<div (click)="closeSlideOver()" [ngClass]="{'z-1002': open, '-z-1': !open}" class="fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
     <div class="absolute inset-0 overflow-hidden">
         <div [ngClass]="{'opacity-0': !open, 'opacity-100': open}"
             class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500" aria-hidden="true">
